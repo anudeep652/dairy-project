@@ -38,9 +38,9 @@
     </button>
     <!-- </button> -->
   </div>
-  <div class="img-wrapper flex justify-center mr-20">
+  <!-- <div class="img-wrapper flex justify-center mr-20">
     <img src={logo} alt="logo" class=" w-[180px] h-[80px]" />
-  </div>
+  </div> -->
 </nav>
 <div class="navbar-menu relative z-50 hidden" bind:this={ref}>
   <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />

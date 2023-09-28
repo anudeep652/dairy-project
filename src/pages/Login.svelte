@@ -19,20 +19,21 @@
   const handleSubmit = async () => {
     isLoading = true;
     const resp = await login(data.email, data.password);
-    let err = await resp.json();
+    let respJson = await resp.json();
     if (resp.status === 400) {
       isError = true;
-      errorMsg = err.error;
+      errorMsg = respJson.error;
       isLoading = false;
     } else {
-      console.log(err);
+      console.log(respJson);
       success("Login Successful");
       localStorage.setItem(
         "user",
         JSON.stringify({
-          username: err.username,
-          email: err.email,
-          token: err.token,
+          username: respJson.username,
+          email: respJson.email,
+          token: respJson.token,
+          role: respJson.role,
         })
       );
       console.log(resp);
@@ -44,23 +45,7 @@
   };
 </script>
 
-<main>
-  <div class="img-wrapper flex justify-center mr-20">
-    <img src={logo} alt="logo" class=" w-[180px] h-[80px]" />
-  </div>
-
-  <div class="top-wrapper">
-    <h1 class="font-semibold text-[1rem] text-center">
-      Welcome Back to
-      <span class="block text-[#00fb1b]"> Scholr Connect! </span>
-    </h1>
-    <p class="mt-2 text-[.98rem] text-center text-white">
-      The place to find the right scholarship for you!
-    </p>
-    <!-- <h1>Welcome back</h1> -->
-    <img src={manSitting} alt="man" class="man" />
-  </div>
-
+<main class="flex justify-center h-[100%]">
   <div class="form-wrapper">
     <form on:submit|preventDefault={handleSubmit}>
       <Input placeholder="Email" icon="email" {data} />

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Link, navigate } from "svelte-routing";
   import { filterScholarships } from "../api/filter";
   import ManIcon from "../assets/mancropped2.png";
@@ -13,7 +13,7 @@
 
   let countries = countryList.map((c) => c.name);
 
-  export let data = {
+  export let data: any = {
     name: null,
     marksPercentage: null,
     annualIncome: null,

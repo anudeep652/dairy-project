@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Router, Link, Route, navigate } from "svelte-routing";
   import Login from "./pages/Login.svelte";
   import Home from "./pages/Home.svelte";
@@ -26,7 +26,7 @@
 </script>
 
 <Router {url}>
-  <div>
+  <div class="h-[100vh]">
     <Route path="/login" component={Login} />
     <!-- <Route path="/home" component={Home} /> -->
     <Route path="/signup" component={Signup} />

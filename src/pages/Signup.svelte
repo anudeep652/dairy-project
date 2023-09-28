@@ -7,12 +7,14 @@
   import loading from "../assets/loading.svg";
   import { success } from "../mytheme";
   import logo from "../assets/logo.png";
+  import DropDown from "../components/DropDown.svelte";
 
   let data = {
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
+    role: "",
   };
   let isLoading = false;
   let isError = false;
@@ -24,11 +26,12 @@
       data.email,
       data.username,
       data.password,
-      data.confirmPassword
+      data.confirmPassword,
+      data.role
     );
     let err = await resp.json();
     if (resp.status === 400) {
-      isError = false;
+      isError = true;
       errorMsg = err.error;
       isLoading = false;
     } else {
@@ -44,23 +47,6 @@
 </script>
 
 <main>
-  <div class="img-wrapper flex justify-center mr-20">
-    <img src={logo} alt="logo" class=" w-[180px] h-[80px]" />
-  </div>
-
-  <div class="top-wrapper">
-    <h1 class="font-semibold text-[1rem] mt-5 text-center">
-      Welcome to
-      <span class="block"> Scholr Connect! </span>
-    </h1>
-    <p class="mt-2 text-[.98rem] text-center text-white">
-      The place to find the right scholarship for you!
-    </p>
-    <!-- <h1>Welcome back</h1> -->
-    <img src={manSitting} alt="man" class="man" />
-  </div>
-  <!-- <divi -->
-
   <h3 class="text-[Raleway] text-[2rem] font-medium mt-[4rem] mb-5">Sign Up</h3>
   <div class="form-wrapper">
     <form on:submit|preventDefault={handleSubmit}>
@@ -68,6 +54,15 @@
       <Input placeholder="Email" icon="email" {data} />
       <Input placeholder="Password" icon="password" {data} />
       <Input placeholder="Confirm Password" icon="confirmPassword" {data} />
+      <!-- <Input placeholder="Who are you?" icon="role" {data} /> -->
+      <div>
+        <h2 class="text-left">Who are you?</h2>
+        <DropDown
+          options={["Doctor", "Pharmacists", "Farmer"]}
+          {data}
+          field="role"
+        />
+      </div>
       {#if isError}
         <span class="text-sm text-red-600">{errorMsg}</span>
       {/if}
@@ -77,7 +72,7 @@
         {#if isLoading}
           <img src={loading} alt="loading" class="svg" />
         {:else}
-          Login
+          Sign Up
         {/if}
       </button>
     </form>
