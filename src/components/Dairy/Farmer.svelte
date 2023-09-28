@@ -1,4 +1,7 @@
 <script lang="ts">
+  //   import { Link } from "svelte-routing";
+
+  import BugerWithNav from "../BugerWithNav.svelte";
 </script>
 
 <main>

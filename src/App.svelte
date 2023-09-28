@@ -12,6 +12,8 @@
   import Exam from "./pages/Exam.svelte";
   import ShowExams from "./pages/ShowExams.svelte";
   import SingleExam from "./pages/SingleExam.svelte";
+  import Form from "./pages/Form.svelte";
+  import Success from "./pages/Success.svelte";
 
   export let url = "/";
 
@@ -43,5 +45,7 @@
     <Route path="/find" component={Find} />
     <Route path="/exams" component={Exam} />
     <Route path="/showexams" component={ShowExams} />
+    <Route path="/form" component={Form} />
+    <Route path="/successcaseupload" component={Success} />
   </div>
 </Router>
