@@ -12,13 +12,8 @@
   <BugerWithNav />
 
   {#if user.role === "Farmer"}
-    <div class="farmer mt-10 flex flex-col gap-4">
+    <div class="farmer flex flex-col gap-4">
       <Farmer />
-      <Link to="/form">
-        <button class="bg-blue-500 text-white p-2 rounded-md w-[30%]"
-          >Click here</button
-        >
-      </Link>
     </div>
   {:else if user.role === "Doctor"}
     <Doctor />

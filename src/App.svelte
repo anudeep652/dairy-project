@@ -14,7 +14,7 @@
   import SingleExam from "./pages/SingleExam.svelte";
   import Form from "./pages/Form.svelte";
   import Success from "./pages/Success.svelte";
-
+  import { SvelteToast } from "@zerodevx/svelte-toast";
   export let url = "/";
 
   onMount(() => {
@@ -29,6 +29,7 @@
 
 <Router {url}>
   <div class="h-[100vh]">
+    <SvelteToast />
     <Route path="/login" component={Login} />
     <!-- <Route path="/home" component={Home} /> -->
     <Route path="/signup" component={Signup} />
@@ -45,7 +46,7 @@
     <Route path="/find" component={Find} />
     <Route path="/exams" component={Exam} />
     <Route path="/showexams" component={ShowExams} />
-    <Route path="/form" component={Form} />
+    <Route path="/instant-medicare" component={Form} />
     <Route path="/successcaseupload" component={Success} />
   </div>
 </Router>

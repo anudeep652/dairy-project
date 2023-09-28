@@ -1,29 +1,37 @@
 <script lang="ts">
   export let images: string[];
+
+  const backIndex = (idx: number) => {
+    return idx - 1 < 0 ? images.length - 1 : idx - 1;
+  };
+
+  const nextIndex = (idx: number) => {
+    return idx + 1 > images.length - 1 ? 0 : idx + 1;
+  };
 </script>
 
-<div class="min-h-screen bg-gray-100 p-3 relative">
-  <div class="w-96 mx-auto" style="scroll-snap-type: x mandatory;">
+<div class="bg-gray-100 p-3 relative mt-[300px]">
+  <div class=" mx-auto" style="scroll-snap-type: x mandatory">
     <!-- first -->
-    {#each images as img}
-      <div class="">
+    {#each images as img, i}
+      <div class="h-[90%]">
         <input
           class="sr-only peer"
           type="radio"
           name="carousel"
-          id="carousel-1"
+          id={"#img" + i}
           checked
         />
         <!-- content #1 -->
         <div
-          class="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0 w-[100%]"
         >
-          <img class="rounded-t-lg w-96 h-64" src={img} alt="" />
+          <img src={img} alt="" />
 
           <!-- controls -->
-          <div class="absolute top-1/2 w-full flex justify-between z-20">
+          <div class="absolute top-1/2 flex justify-between z-20 w-[100%]">
             <label
-              for="carousel-3"
+              for={"#img" + backIndex(i)}
               class="inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5"
             >
               <svg
@@ -40,7 +48,7 @@
               </svg>
             </label>
             <label
-              for="carousel-2"
+              for={"#img" + nextIndex(i)}
               class="inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5"
             >
               <svg

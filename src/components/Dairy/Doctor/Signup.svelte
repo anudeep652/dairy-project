@@ -1,0 +1,17 @@
+<!-- let doctorData = {
+    name: "",
+    address: "",
+    city: "",
+    pincode: "",
+    email: "",
+    phone: "",
+    doctorCertificate: "",
+    aadhar: "",
+    degree: "",
+    profession: "",
+    availabilityTime: "",
+    noOfDaysAvailable: "",
+    clinicAddress: "",
+    clinicCity: "",
+    clinicPincode: "",
+  }; -->
