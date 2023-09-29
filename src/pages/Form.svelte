@@ -10,6 +10,7 @@
   let isError = false;
   let errorMsg = "";
   let isLoading = false;
+  const user = JSON.parse(localStorage.getItem("user"));
 
   async function addImage() {
     const image = await Camera.getPhoto({
@@ -25,13 +26,10 @@
   }
 
   const handleFormSubmit = async () => {
-    const resp = await newCase(place, images);
+    console.log(images);
+    const resp = await newCase(user._id, images);
     const respJson = await resp.json();
-    if (resp.status === 400) {
-      isError = true;
-      errorMsg = respJson.message;
-      isLoading = false;
-    } else {
+    if (resp.status === 200) {
       console.log(respJson);
       success("Successfully posted case");
       localStorage.setItem(
@@ -46,6 +44,10 @@
       errorMsg = "";
       isLoading = false;
       navigate("/successcaseupload");
+    } else {
+      isError = true;
+      errorMsg = respJson.message;
+      isLoading = false;
     }
   };
 </script>

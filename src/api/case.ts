@@ -8,13 +8,13 @@ export const getAllCases = async () => {
   return data;
 };
 
-export const newCase = async (place: string, images: string[]) => {
-  const data = await fetch(API_URL + "/new/case", {
+export const newCase = async (_id: string, images: string[]) => {
+  const data = await fetch(API_URL + "/farmer/new-case", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json; charset=UTF-8",
     }),
-    body: JSON.stringify({ place, images }),
+    body: JSON.stringify({ _id, images }),
   });
   return data;
 };
