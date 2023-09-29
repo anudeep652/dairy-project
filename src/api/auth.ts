@@ -85,3 +85,13 @@ export const getDoctorProfile = async (_id: string) => {
   });
   return data;
 };
+
+export const getAllDoctors = async () => {
+  const data = await fetch(API_URL + "/doctor/all/", {
+    method: "GET",
+    headers: new Headers({
+      "Content-Type": "application/json; charset=UTF-8",
+    }),
+  });
+  return data;
+};

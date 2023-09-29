@@ -27,7 +27,7 @@
     {
       text: "Doctors Nearby",
       icon: Vaccine,
-      to: "/vaccine-chart",
+      to: "/doctors-nearby",
     },
     {
       text: "Seasonal Diseases",
