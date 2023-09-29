@@ -80,38 +80,38 @@
       </div>
     {/if}
   </button>
-  <div class="text-lg font-bold mt-5">
+  <div class="text-lg mt-5 font-[Raleway] font-[800]">
     <p>{doctor?.name}</p>
   </div>
 
-  <p class="mt-2 text-sm text-gray-900">
+  <p class="mt-2 text-sm text-gray-600 font-[Raleway] font-[600]">
     {doctor?.email}
   </p>
 
   <div class="w-[100%] px-5 my-10 flex flex-col gap-10">
     <div class="">
       <div class="flex fex-col justify-between">
-        <h2>Address</h2>
-        <h2 class=" text-gray-900">
+        <h2 class="font-[Raleway] font-[600]">Address</h2>
+        <h2 class=" text-gray-700 font-[Raleway] font-[600]">
           {doctor?.address}
         </h2>
       </div>
     </div>
     <div class="flex fex-col justify-between">
-      <h2>City</h2>
-      <h2 class=" text-gray-900">
+      <h2 class="font-[Raleway] font-[600]">City</h2>
+      <h2 class=" text-gray-700 font-[Raleway] font-[600]">
         {doctor?.city}
       </h2>
     </div>
     <div class="flex fex-col justify-between">
-      <h2>Pincode</h2>
-      <h2 class=" text-gray-900">
+      <h2 class="font-[Raleway] font-[600]">Pincode</h2>
+      <h2 class=" text-gray-700 font-[Raleway] font-[600]">
         {doctor?.pincode}
       </h2>
     </div>
     <div class="flex fex-col justify-between">
-      <h2>Phone Number</h2>
-      <h2 class=" text-gray-900">
+      <h2 class="font-[Raleway] font-[600]">Phone Number</h2>
+      <h2 class=" text-gray-700 font-[Raleway] font-[600]">
         {doctor?.phone}
       </h2>
     </div>

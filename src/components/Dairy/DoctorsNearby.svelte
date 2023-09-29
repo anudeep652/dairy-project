@@ -55,20 +55,32 @@
                   <tr>
                     <td class="p-2 whitespace-nowrap">
                       <div class="flex items-center">
-                        <div class="font-medium text-base text-gray-800">
+                        <div
+                          class="text-base text-gray-800 font-[Raleway] font-[600]"
+                        >
                           {doc.name}
                         </div>
                       </div>
                     </td>
                     <td class="p-2 whitespace-nowrap">
-                      <div class="text-left text-base">{doc.profession}</div>
+                      <div
+                        class="text-left text-base font-[Raleway] font-[600]"
+                      >
+                        {doc.profession}
+                      </div>
                     </td>
 
                     <td class="p-2 whitespace-nowrap">
-                      <div class="text-base text-center">{doc.phone}</div>
+                      <div class="text-base text-center">
+                        {doc.phone}
+                      </div>
                     </td>
                     <td class="p-2 whitespace-nowrap">
-                      <div class="text-base text-center">{doc.city}</div>
+                      <div
+                        class="text-base text-center font-[Raleway] font-[600]"
+                      >
+                        {doc.city}
+                      </div>
                     </td>
                   </tr>
                 {/each}

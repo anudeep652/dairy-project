@@ -20,6 +20,7 @@
       saveToGallery: true,
       resultType: CameraResultType.DataUrl,
     });
+    console.log(image.format);
 
     images.push(image.dataUrl!);
     images = [...images];
@@ -58,7 +59,7 @@
 <form action="" class="my-5 flex flex-col justify-center items-center gap-10">
   <div class="px-5">
     <div class="flex flex-col gap-5 justify-center items-center">
-      <h2 class="font-semibold text-lg">
+      <h2 class="font-semibold text-lg font-[Raleway]">
         Upload few images of the cow suffering from the disease
       </h2>
       <label
@@ -82,7 +83,7 @@
             />
           </svg>
           <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-            <span class="font-semibold">Click to add photos</span>
+            <span class="font-[Raleway] font-[600]">Click to add photos</span>
           </p>
         </div>
         <input
@@ -104,7 +105,7 @@
     </div>
   </div>
   <button
-    class="bg-blue-500 text-white px-5 py-2 rounded-md self-end mx-5"
+    class="bg-blue-500 text-white px-5 py-2 rounded-md self-end mx-5 font-[Raleway] font-[600]"
     on:click|preventDefault={handleFormSubmit}>Submit</button
   >
 </form>

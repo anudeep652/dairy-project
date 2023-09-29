@@ -17,6 +17,10 @@
   import { SvelteToast } from "@zerodevx/svelte-toast";
   import Profile from "./components/Dairy/Profile.svelte";
   import DoctorsNearby from "./components/Dairy/DoctorsNearby.svelte";
+  import VaccineChart from "./components/Dairy/VaccineChart.svelte";
+  import BookingSuccess from "./components/Dairy/BookingSuccess.svelte";
+  import Appointments from "./components/Dairy/Appointments.svelte";
+  import AllCases from "./components/Dairy/AllCases.svelte";
   export let url = "/";
 
   onMount(() => {
@@ -43,8 +47,8 @@
     <Route path="/exam/:id" let:params>
       <SingleExam id={params.id} />
     </Route>
-    <Route path="/contact" component={Contact} />
-    <Route path="/about" component={About} />
+    <!-- <Route path="/contact" component={Contact} /> -->
+    <!-- <Route path="/about" component={About} /> -->
     <Route path="/find" component={Find} />
     <Route path="/exams" component={Exam} />
     <Route path="/showexams" component={ShowExams} />
@@ -52,5 +56,9 @@
     <Route path="/successcaseupload" component={Success} />
     <Route path="/profile" component={Profile} />
     <Route path="/doctors-nearby" component={DoctorsNearby} />
+    <Route path="/vaccine-chart" component={VaccineChart} />
+    <Route path="/booking-success" component={BookingSuccess} />
+    <Route path="/appointments" component={Appointments} />
+    <Route path="/cases" component={AllCases} />
   </div>
 </Router>

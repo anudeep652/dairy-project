@@ -43,7 +43,9 @@
 </script>
 
 <main>
-  <h2 class="my-5 text-lg font-medium">What service do you want today ?</h2>
+  <h2 class="my-5 text-xl font-[Raleway] font-[600]">
+    What service do you want today ?
+  </h2>
   <div class="btns flex flex-col gap-10">
     {#each btns as btn}
       <Link to={btn.to} class="w-[100%]">
@@ -51,7 +53,7 @@
           class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%]"
         >
           {@html btn.icon}
-          <h2 class="flex-1 text-lg">
+          <h2 class="flex-1 text-lg font-[Raleway] font-[600]">
             {btn.text}
           </h2>
         </button>

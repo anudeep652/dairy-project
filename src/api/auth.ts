@@ -95,3 +95,35 @@ export const getAllDoctors = async () => {
   });
   return data;
 };
+
+export const findDoctorByLocation = async (city: string) => {
+  const data = await fetch(API_URL + "/doctor/find/" + city, {
+    method: "GET",
+    headers: new Headers({
+      "Content-Type": "application/json; charset=UTF-8",
+    }),
+  });
+  return data;
+};
+
+export const bookDoctor = async (doctorId: string, farmerId: string) => {
+  const data = await fetch(API_URL + "/doctor/book", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json; charset=UTF-8",
+    }),
+    body: JSON.stringify({ doctorId, farmerId }),
+  });
+  return data;
+};
+
+export const caseFarmers = async (farmers: string[]) => {
+  const data = await fetch(API_URL + "/doctor/case-farmers", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json; charset=UTF-8",
+    }),
+    body: JSON.stringify({ farmers }),
+  });
+  return data;
+};

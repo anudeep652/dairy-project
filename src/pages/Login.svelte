@@ -20,7 +20,9 @@
   {/if}
 {:else}
   <main class="flex flex-col justify-center items-center mx-5 h-[100%]">
-    <label for="" class="self-start py-5">Select your role</label>
+    <label for="" class="self-start py-5 font-[Raleway] font-[600]"
+      >Select your role</label
+    >
     <select
       bind:value={role}
       name="pets"
@@ -32,7 +34,7 @@
       {/each}
     </select>
     <button
-      class="bg-blue-600 py-2 px-5 text-white rounded-md self-end my-10"
+      class="bg-blue-600 py-2 px-5 text-white rounded-md self-end my-10 font-[Raleway] font-[600]"
       on:click|preventDefault={handleClick}>Next</button
     >
   </main>

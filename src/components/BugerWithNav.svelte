@@ -38,9 +38,6 @@
     </button>
     <!-- </button> -->
   </div>
-  <!-- <div class="img-wrapper flex justify-center mr-20">
-    <img src={logo} alt="logo" class=" w-[180px] h-[80px]" />
-  </div> -->
 </nav>
 <div class="navbar-menu relative z-50 hidden" bind:this={ref}>
   <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
@@ -49,16 +46,18 @@
   >
     <div class="flex items-center">
       <div
-        class="rounded-[50%] flex justify-center items-center bg-blue-500 text-white mr-5 px-2 py-2 w-[40px] h-[40px]"
+        class="font-[Raleway] rounded-[50%] flex justify-center items-center bg-blue-500 text-white mr-5 px-2 py-2 w-[40px] h-[40px]"
       >
         {user?.name[0]?.toUpperCase()}
       </div>
       <Link
-        class="mr-auto text-lg font-semibold leading-none mt-5 flex flex-col"
+        class="mr-auto text-lg leading-none mt-5 flex flex-col font-[Raleway] font-[700]"
         to="/profile"
       >
         {user?.name}
-        <span class="text-gray-300 text-sm mt-1">{user?.email}</span>
+        <span class="text-gray-300 text-sm mt-1 fon-[Raleway] font-[600]"
+          >{user?.email}</span
+        >
       </Link>
       <button class="navbar-close" on:click|preventDefault={handleBurger}>
         <Cross />
@@ -77,7 +76,7 @@
       </ul>
     </div>
     <button
-      class="mt-auto bg-blue-600 p-2 rounded-full text-white"
+      class="mt-auto bg-blue-600 p-2 rounded-full text-white font-[Raleway] font-[600]"
       on:click={logout}>Logout</button
     >
   </nav>

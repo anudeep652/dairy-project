@@ -33,13 +33,15 @@
 </script>
 
 <main class="flex justify-center h-[100%]">
-  <h2 class="text-center text-xl">Login</h2>
+  <h2 class="text-center text-xl font-[Raleway] font-[600]">Login</h2>
   <div class="form-wrapper">
     <form on:submit|preventDefault={handleSubmit}>
       <Input placeholder="Email" icon="email" {data} />
       <Input placeholder="Password" icon="password" {data} />
       {#if isError}
-        <span class="text-sm text-red-600">{errorMsg}</span>
+        <span class="text-sm text-red-600 font-[Raleway] font-[600]"
+          >{errorMsg}</span
+        >
       {/if}
 
       <div class="forgot-p flex justify-between">
@@ -53,7 +55,7 @@
       </div>
 
       <button
-        class="text-white login-btn rounded-full text-lg p-1.5 text-[Raleway]"
+        class="text-white login-btn rounded-full text-lg p-1.5 font-[Raleway] font-[600]"
       >
         {#if isLoading}
           <img src={loading} alt="loading" class="svg" />
@@ -64,7 +66,9 @@
     </form>
   </div>
   <Link to="/signup" class="text-center">
-    <button class="text-[Raleway] text-sm text-center mt-5 text-blue-700">
+    <button
+      class="font-[Raleway] font-[600] text-sm text-center mt-5 text-blue-700"
+    >
       Dont Have an Account? Sign Up
     </button>
   </Link>

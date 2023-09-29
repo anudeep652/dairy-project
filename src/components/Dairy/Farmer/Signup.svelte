@@ -40,7 +40,7 @@
 </script>
 
 <main>
-  <h3 class="text-[Raleway] text-[2rem] font-medium my-10">Sign Up</h3>
+  <h3 class="font-[Raleway] font-[600] text-[2rem] my-10">Sign Up</h3>
   <div class="form-wrapper">
     <form on:submit|preventDefault={handleSubmit}>
       <Input placeholder="Name" icon="name" data={farmerData} />
@@ -57,10 +57,12 @@
       />
 
       {#if isError}
-        <span class="text-sm text-red-600">{errorMsg}</span>
+        <span class="text-sm text-red-600 font-[Raleway] font-[600]"
+          >{errorMsg}</span
+        >
       {/if}
       <button
-        class="text-white login-btn rounded-full text-lg p-1.5 text-[Raleway]"
+        class="text-white login-btn rounded-full text-lg p-1.5 font-[Raleway] font-[600]"
       >
         {#if isLoading}
           <img src={loading} alt="loading" class="svg" />
@@ -71,7 +73,9 @@
     </form>
   </div>
   <Link to="/login" class="text-center mb-5">
-    <button class="text-[Raleway] text-sm text-center mt-5 text-blue-700">
+    <button
+      class=" text-sm text-center mt-5 text-blue-700 font-[Raleway] font-[600]"
+    >
       Already Have an Account? Login
     </button>
   </Link>

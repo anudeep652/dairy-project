@@ -3,31 +3,32 @@
   import { getAllCases } from "../../api/case";
   import Carousel from "./Carousel.svelte";
   import LocationIcon from "./LocationIcon.svelte";
-
-  let cases: any[];
-  onMount(async () => {
-    const resp = await getAllCases();
-    const respJson = await resp.json();
-    console.log(respJson.data);
-    cases = respJson.data;
-    console.log(cases);
-  });
+  import { Link } from "svelte-routing";
 </script>
 
-<main>
-  {#if cases}
-    {#each cases as c}
-      <div class="flex flex-col gap-6">
-        <div class="location mt-5 gap-5" />
-        <div class="images">
-          <h1 class="font-bold text-[1.27rem]">
-            Some Images of the infected cow
-          </h1>
-          {#each c.cases as caseImg}
-            <Carousel images={caseImg.images} />
-          {/each}
-        </div>
-      </div>
-    {/each}
-  {/if}
+<main class="h-[100%]">
+  <div class="btns flex flex-col gap-10 my-5 h-[100%] mt-15">
+    <Link to="/appointments" class="w-[100%]">
+      <button
+        class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%]"
+      >
+        <!-- {@html btn.icon} -->
+        <h2 class="flex-1 text-xl">
+          <!-- {btn.text} -->
+          My Appointments
+        </h2>
+      </button>
+    </Link>
+    <Link to="/cases" class="w-[100%]">
+      <button
+        class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%]"
+      >
+        <!-- {@html btn.icon} -->
+        <h2 class="flex-1 text-xl">
+          <!-- {btn.text} -->
+          All Cases
+        </h2>
+      </button>
+    </Link>
+  </div>
 </main>
