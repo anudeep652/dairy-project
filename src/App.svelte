@@ -15,6 +15,7 @@
   import Form from "./pages/Form.svelte";
   import Success from "./pages/Success.svelte";
   import { SvelteToast } from "@zerodevx/svelte-toast";
+  import Profile from "./components/Dairy/Profile.svelte";
   export let url = "/";
 
   onMount(() => {
@@ -48,5 +49,6 @@
     <Route path="/showexams" component={ShowExams} />
     <Route path="/instant-medicare" component={Form} />
     <Route path="/successcaseupload" component={Success} />
+    <Route path="/profile" component={Profile} />
   </div>
 </Router>

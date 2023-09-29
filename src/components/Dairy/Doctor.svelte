@@ -11,7 +11,6 @@
     console.log(respJson.data);
     cases = respJson.data;
   });
-  //   console.log(cases);
 </script>
 
 <main>

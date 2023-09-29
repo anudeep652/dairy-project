@@ -11,11 +11,11 @@
 <main class="p-5">
   <BugerWithNav />
 
-  {#if user.role === "Farmer"}
+  {#if user.role === "farmer"}
     <div class="farmer flex flex-col gap-4">
       <Farmer />
     </div>
-  {:else if user.role === "Doctor"}
+  {:else if user.role === "doctor"}
     <Doctor />
   {/if}
 </main>

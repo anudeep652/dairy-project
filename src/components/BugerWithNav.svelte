@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, navigate } from "svelte-routing";
+  import { Link, link, navigate } from "svelte-routing";
   import Cross from "../assets/Cross.svelte";
   import logo from "../assets/logo.png";
 
@@ -51,15 +51,15 @@
       <div
         class="rounded-[50%] flex justify-center items-center bg-blue-500 text-white mr-5 px-2 py-2 w-[40px] h-[40px]"
       >
-        {user?.username[0]?.toUpperCase()}
+        {user?.name[0]?.toUpperCase()}
       </div>
-      <a
+      <Link
         class="mr-auto text-lg font-semibold leading-none mt-5 flex flex-col"
-        href="#"
+        to="/profile"
       >
-        {user?.username}
+        {user?.name}
         <span class="text-gray-300 text-sm mt-1">{user?.email}</span>
-      </a>
+      </Link>
       <button class="navbar-close" on:click|preventDefault={handleBurger}>
         <Cross />
       </button>
