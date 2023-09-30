@@ -1,0 +1,11 @@
+{
+  "appId": "com.example.app",
+  "appName": "Dairy Connect",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

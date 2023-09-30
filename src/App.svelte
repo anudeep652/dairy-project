@@ -21,6 +21,7 @@
   import BookingSuccess from "./components/Dairy/BookingSuccess.svelte";
   import Appointments from "./components/Dairy/Appointments.svelte";
   import AllCases from "./components/Dairy/AllCases.svelte";
+  import DoctorProfile from "./components/Dairy/DoctorProfile.svelte";
   export let url = "/";
 
   onMount(() => {
@@ -60,5 +61,8 @@
     <Route path="/booking-success" component={BookingSuccess} />
     <Route path="/appointments" component={Appointments} />
     <Route path="/cases" component={AllCases} />
+    <Route path="/doctor/:id" let:params>
+      <DoctorProfile doctorId={params.id} />
+    </Route>
   </div>
 </Router>

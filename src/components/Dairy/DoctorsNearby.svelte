@@ -3,8 +3,10 @@
   import { bookDoctor, getAllDoctors } from "../../api/auth";
   import BugerWithNav from "../BugerWithNav.svelte";
   import { navigate } from "svelte-routing";
+  import DoctorProfile from "./DoctorProfile.svelte";
 
   let doctors: any[] = [];
+  export let showBtn: boolean = false;
   let isError = false;
   let errorMsg = "";
   let isLoading = false;
@@ -112,10 +114,20 @@
                     </td>
                     <td class="p-2 whitespace-nowrap">
                       <button
-                        on:click|preventDefault={() => handleClick(doc._id)}
+                        on:click|preventDefault={() => {
+                          if (showBtn) {
+                            handleClick(doc._id);
+                          } else {
+                            navigate(`/doctor/${doc._id}`);
+                          }
+                        }}
                         class="text-base text-center font-[Raleway] font-[600] bg-blue-600 text-white py-3 px-4 rounded-md"
                       >
-                        Book appointment
+                        {#if showBtn}
+                          Book appointment
+                        {:else}
+                          View profile
+                        {/if}
                       </button>
                     </td>
                   </tr>

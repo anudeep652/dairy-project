@@ -6,5 +6,5 @@
   <h2>Uploaded successfully</h2>
   <button>View available doctors for appointments</button>
 
-  <DoctorsNearby />
+  <DoctorsNearby showBtn />
 </main>

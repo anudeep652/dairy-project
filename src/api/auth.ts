@@ -1,5 +1,5 @@
 // const API_URL = "https://scholarship-backend.up.railway.app";
-const API_URL = "http://localhost:3000";
+const API_URL = "https://scholarship-backend-production.up.railway.app";
 export const loginFarmer = async (email: string, password: string) => {
   const data = await fetch(API_URL + "/farmer/login", {
     method: "POST",
