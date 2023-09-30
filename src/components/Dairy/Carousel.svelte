@@ -10,7 +10,7 @@
   };
 </script>
 
-<div class="bg-gray-100 p-3 relative mt-[300px]">
+<div class="bg-gray-100 p-3 relative mt-16">
   <div class=" mx-auto" style="scroll-snap-type: x mandatory">
     <!-- first -->
     {#each images as img, i}

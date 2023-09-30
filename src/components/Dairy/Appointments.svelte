@@ -8,6 +8,7 @@
     const resp = await caseFarmers(user.appointments);
     const respJson = await resp.json();
     farmer = respJson.data;
+    console.log(farmer);
   });
 </script>
 
@@ -15,8 +16,8 @@
   <BugerWithNav />
 </div>
 <main class="h-full">
-  {#if farmer}
-    <div class="m-10 h-full flex fex-col gap-10">
+  {#if farmer?.length > 0}
+    <div class="m-10 h-full flex flex-col gap-10">
       {#each farmer as f}
         <div class="h-full flex flex-col gap-5">
           <div>
@@ -37,6 +38,12 @@
           </div>
         </div>
       {/each}
+    </div>
+  {:else}
+    <div
+      class="flex justify-center items-center font-[Raleway] text-lg font-[700]"
+    >
+      No Appointments
     </div>
   {/if}
 </main>

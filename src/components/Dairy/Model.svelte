@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { navigate } from "svelte-routing";
-  import { bookDoctor, findDoctorByLocation } from "../../api/auth";
+  import { bookDoctorVaccine, findDoctorByLocation } from "../../api/auth";
 
   export let setShowModel: (val: boolean) => void;
   const user = JSON.parse(localStorage.getItem("user"));
@@ -17,7 +17,7 @@
   });
 
   const handleClick = async (doctorId: string) => {
-    const resp = await bookDoctor(doctorId, user._id);
+    const resp = await bookDoctorVaccine(doctorId, user._id);
     const respJson = await resp.json();
     if (resp.status === 200) {
       console.log(respJson);

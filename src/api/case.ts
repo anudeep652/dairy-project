@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:3000";
-export const getAllCases = async () => {
-  const data = await fetch(API_URL + "/cases", {
+export const getAllCases = async (doctor_id: string) => {
+  const data = await fetch(API_URL + "/doctor/get-cases/" + doctor_id, {
     headers: new Headers({
       "Content-Type": "application/json; charset=UTF-8",
     }),

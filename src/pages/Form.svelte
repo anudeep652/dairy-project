@@ -36,7 +36,6 @@
       localStorage.setItem(
         "newcase",
         JSON.stringify({
-          place: respJson.place,
           images: respJson.images,
         })
       );

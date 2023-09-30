@@ -10,23 +10,23 @@
   <div class="btns flex flex-col gap-10 my-5 h-[100%] mt-15">
     <Link to="/appointments" class="w-[100%]">
       <button
-        class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%]"
+        class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%] font-[Raleway] font-[600]"
       >
         <!-- {@html btn.icon} -->
         <h2 class="flex-1 text-xl">
           <!-- {btn.text} -->
-          My Appointments
+          My Vaccine Appointments
         </h2>
       </button>
     </Link>
     <Link to="/cases" class="w-[100%]">
       <button
-        class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%]"
+        class="bg-blue-800 text-white p-6 rounded-md justify-between items-center flex w-[100%] font-[Raleway] font-[600]"
       >
         <!-- {@html btn.icon} -->
         <h2 class="flex-1 text-xl">
           <!-- {btn.text} -->
-          All Cases
+          Requested Cases
         </h2>
       </button>
     </Link>

@@ -106,8 +106,8 @@ export const findDoctorByLocation = async (city: string) => {
   return data;
 };
 
-export const bookDoctor = async (doctorId: string, farmerId: string) => {
-  const data = await fetch(API_URL + "/doctor/book", {
+export const bookDoctorVaccine = async (doctorId: string, farmerId: string) => {
+  const data = await fetch(API_URL + "/doctor/book/vaccine", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json; charset=UTF-8",
@@ -124,6 +124,21 @@ export const caseFarmers = async (farmers: string[]) => {
       "Content-Type": "application/json; charset=UTF-8",
     }),
     body: JSON.stringify({ farmers }),
+  });
+  return data;
+};
+
+export const bookDoctor = async (
+  doctor_id: string,
+  farmer_id: string,
+  images: string[]
+) => {
+  const data = await fetch(API_URL + "/doctor/book", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json; charset=UTF-8",
+    }),
+    body: JSON.stringify({ doctor_id, farmer_id, images }),
   });
   return data;
 };

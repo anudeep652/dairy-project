@@ -1,15 +1,40 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { getAllDoctors } from "../../api/auth";
+  import { bookDoctor, getAllDoctors } from "../../api/auth";
   import BugerWithNav from "../BugerWithNav.svelte";
+  import { navigate } from "svelte-routing";
 
   let doctors: any[] = [];
+  let isError = false;
+  let errorMsg = "";
+  let isLoading = false;
   onMount(async () => {
     const resp = await getAllDoctors();
     const respJson = await resp.json();
     doctors = respJson.data;
     console.log(respJson);
   });
+
+  const handleClick = async (doctor_id: string) => {
+    // @ts-ignore
+    const newCaseImages = JSON.parse(localStorage.getItem("newcase"));
+    // @ts-ignore
+    const user = JSON.parse(localStorage.getItem("user"));
+    const resp = await bookDoctor(doctor_id, user._id, newCaseImages.images);
+    const respJson = await resp.json();
+    if (resp.status === 200) {
+      console.log(respJson);
+      console.log(resp);
+      isError = false;
+      errorMsg = "";
+      isLoading = false;
+      navigate("/booking-success");
+    } else {
+      isError = true;
+      errorMsg = respJson.message;
+      isLoading = false;
+    }
+  };
 </script>
 
 <div class="m-5">
@@ -48,11 +73,14 @@
                       Location
                     </div>
                   </th>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-center text-base" />
+                  </th>
                 </tr>
               </thead>
               <tbody class="text-sm divide-y divide-gray-100">
                 {#each doctors as doc}
-                  <tr>
+                  <tr class="my-5">
                     <td class="p-2 whitespace-nowrap">
                       <div class="flex items-center">
                         <div
@@ -81,6 +109,14 @@
                       >
                         {doc.city}
                       </div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <button
+                        on:click|preventDefault={() => handleClick(doc._id)}
+                        class="text-base text-center font-[Raleway] font-[600] bg-blue-600 text-white py-3 px-4 rounded-md"
+                      >
+                        Book appointment
+                      </button>
                     </td>
                   </tr>
                 {/each}
