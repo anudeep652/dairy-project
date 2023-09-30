@@ -1,21 +1,12 @@
-import { CapacitorConfig } from "@capacitor/cli";
-import { App as CapacitorApp } from "@capacitor/app";
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: "com.example.app",
-  appName: "ScholrConnect",
-  webDir: "dist",
+  appId: 'com.example.app',
+  appName: 'Dairy connect',
+  webDir: 'dist',
   server: {
-    androidScheme: "https",
-  },
-};
-
-CapacitorApp.addListener("backButton", ({ canGoBack }) => {
-  if (!canGoBack) {
-    CapacitorApp.exitApp();
-  } else {
-    window.history.back();
+    androidScheme: 'https'
   }
-});
+};
 
 export default config;
